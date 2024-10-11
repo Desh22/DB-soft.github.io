@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modo_oscuro.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">BSS</div>
+        <ul>
+            <li><a href="#Acerca_de">Acerca de nosotros</a></li>
+            <li><a href="#Proyectos">Proyectos</a></li>
+            <li><a href="#herramientas">Herramientas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <div id="toggle" class="toggle-button">
+            <i class="indicator">🌙</i> <!-- Icono de modo oscuro -->
+        </div>
+    </nav>
+
+    <section id="Acerca_de" class="Icono_oculta">
+        <div class="Contenido">
+            <div class="Contenido-Izquierdo">
+                <img src="img/WhatsApp Imagea 2024-10-02 at 11.26.45 AM.jpeg" alt="Imagen del Desarrollador" class="profile-image">
+            </div>
+            <div class="Contenido-Derecho">
+                <h2>Frontend Desarrollador</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="Proyectos">
+        <h2>Proyectos:</h2>
+        <p>Aquí puedes ver algunos de los proyectos en los que hemos trabajado.</p>
+        <div class="project-container">
+            <a href="link-proyecto1.html" class="project-card">Proyecto 1</a>
+            <a href="link-proyecto2.html" class="project-card">Proyecto 2</a>
+            <a href="link-proyecto3.html" class="project-card">Proyecto 3</a>
+            <a href="link-proyecto4.html" class="project-card">Proyecto 4</a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        const body = document.querySelector('body');
+        const toggle = document.getElementById('toggle');
+        toggle.onclick = function() {
+            toggle.classList.toggle('active');
+            body.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

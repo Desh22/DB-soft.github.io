@@ -1,0 +1,137 @@
+/* Ajuste global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.7s, color 0.7s;
+}
+
+/* Navbar estilo sticky */
+nav {
+    background-color: rgba(51, 51, 51, 0.8); /* Fondo semi-transparente */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    backdrop-filter: blur(5px); /* Efecto borroso */
+}
+
+nav .logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Botón de modo oscuro */
+.toggle-button {
+    background-color: #333;
+    border: 2px solid white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.toggle-button .indicator {
+    color: white;
+    font-size: 16px;
+}
+
+/* Sección Acerca de Nosotros */
+.Contenido {
+    display: flex;
+    height: 100vh;
+}
+
+.Contenido-Izquierdo {
+    flex: 1;
+    background-color: #add8e6; /* Celeste */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Contenido-Izquierdo .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+}
+
+.Contenido-Derecho {
+    background-color: white;
+    color: black;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+}
+
+.Contenido-Derecho h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.Contenido-Derecho p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Sección Proyectos */
+.project-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.project-card {
+    background-color: #AC6DB9; /* Color morado */
+    width: 150px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.7s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
