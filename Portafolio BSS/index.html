@@ -1,59 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="modo_oscuro.css">
+    <title>Portafolio</title>
 </head>
+
 <body>
-    <nav>
-        <div class="logo">BSS</div>
-        <ul>
-            <li><a href="#Acerca_de">Acerca de nosotros</a></li>
-            <li><a href="#Proyectos">Proyectos</a></li>
-            <li><a href="#herramientas">Herramientas</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-        <div id="toggle" class="toggle-button">
-            <i class="indicator">🌙</i> <!-- Icono de modo oscuro -->
+    <header>
+        <div class="logo">
+            <img src="img/logo-sin-fondo-removebg-preview.png" alt="Logo">
         </div>
-    </nav>
-
-    <section id="Acerca_de" class="Icono_oculta">
-        <div class="Contenido">
-            <div class="Contenido-Izquierdo">
-                <img src="img/WhatsApp Imagea 2024-10-02 at 11.26.45 AM.jpeg" alt="Imagen del Desarrollador" class="profile-image">
-            </div>
-            <div class="Contenido-Derecho">
-                <h2>Frontend Desarrollador</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Portafolio</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="https://wa.me/1234567890">Whatsapp</a></li>
+            </ul>
+        </nav>
+        <!-- Botón Modo Oscuro -->
+        <div class="modo-oscuro">
+            <div class="toggle-container">
+                <input type="checkbox" id="alternar-tema">
+                <label for="alternar-tema" class="toggle">
+                    <div class="slider">
+                        <div class="Sol"></div>
+                        <div class="Luna">
+                            <div class="crater crater-1"></div>
+                            <div class="crater crater-2"></div>
+                            <div class="crater crater-3"></div>
+                        </div>
+                        <div class="stars"></div>
+                    </div>
+                </label>
             </div>
         </div>
+        <br>
+    </header>
+    <section>
+        <img class="logo-image" src="img/LogoWhite.png" alt="Logo">
     </section>
 
-    <section id="Proyectos">
-        <h2>Proyectos:</h2>
-        <p>Aquí puedes ver algunos de los proyectos en los que hemos trabajado.</p>
-        <div class="project-container">
-            <a href="link-proyecto1.html" class="project-card">Proyecto 1</a>
-            <a href="link-proyecto2.html" class="project-card">Proyecto 2</a>
-            <a href="link-proyecto3.html" class="project-card">Proyecto 3</a>
-            <a href="link-proyecto4.html" class="project-card">Proyecto 4</a>
-        </div>
-    </section>
-
-    <script src="script.js"></script>
     <script>
-        const body = document.querySelector('body');
-        const toggle = document.getElementById('toggle');
-        toggle.onclick = function() {
-            toggle.classList.toggle('active');
-            body.classList.toggle('active');
-        }
+        const toggle = document.getElementById("alternar-tema");
+
+        toggle.addEventListener("change", () => {
+            document.body.style.backgroundColor = toggle.checked ? "#2c3e50" : "#ffffff";
+            const header = document.querySelector('header');
+            if (toggle.checked) {
+                header.style.backgroundColor = "#8e44ad"; // Color morado
+                document.querySelector(".logo-image").src = "img/image.png"; // Cambiar imagen en modo oscuro
+            } else {
+                header.style.backgroundColor = "#333"; // Color inicial del header
+                document.querySelector(".logo-image").src = "img/Imagen1.png"; // Cambiar imagen en modo claro
+            }
+        });
     </script>
 </body>
+
 </html>
