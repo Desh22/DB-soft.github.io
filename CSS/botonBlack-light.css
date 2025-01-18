@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    transition: background-color 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    background-color: #d9d9d9;
+    border-radius: 25px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.Sol {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 34px;
+    height: 34px;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 15px 3px rgba(255, 223, 0, 0.6);
+    transition: transform 0.5s ease;
+}
+
+.Luna {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 34px;
+    height: 34px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    box-shadow: inset -3px -3px 0 #bbbbbb, inset 3px 3px 0 #ffffff;
+    transform: translateX(100px);
+    transition: transform 0.5s ease;
+}
+
+.crater {
+    position: absolute;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+}
+
+.crater-1 {
+    width: 8px;
+    height: 8px;
+    top: 8px;
+    left: 12px;
+}
+
+.crater-2 {
+    width: 6px;
+    height: 6px;
+    top: 16px;
+    right: 10px;
+}
+
+.crater-3 {
+    width: 4px;
+    height: 4px;
+    bottom: 10px;
+    left: 18px;
+}
+
+.stars {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow:
+        10px -5px white,
+        -15px 10px white,
+        20px 15px white,
+        -25px -20px white;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked+.toggle .Sol {
+    transform: translateX(120px);
+}
+
+input[type="checkbox"]:checked+.toggle .Luna {
+    transform: translateX(0);
+}
+
+input[type="checkbox"]:checked+.toggle {
+    background-color: #2c3e50;
+}
+
+input[type="checkbox"]:checked+.toggle .stars {
+    display: block;
+}
+
+input[type="checkbox"]:checked~body {
+    background-color: #2c3e50;
+}

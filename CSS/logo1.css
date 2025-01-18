@@ -1,0 +1,135 @@
+.logo-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Menos espacio entre elementos */
+}
+
+.fondo {
+    position: relative;
+    width: 60px; /* Más pequeño */
+    height: 60px; /* Más pequeño */
+}
+
+.punto {
+    position: absolute;
+    width: 30px; /* Más pequeño */
+    height: 30px; /* Más pequeño */
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.punto.púrpura {
+    background-color: rgba(128, 0, 255, 0.8);
+    top: -3px;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+.punto.red {
+    background-color: rgba(255, 0, 0, 0.8);
+    top: 15px;
+    left: 25px;
+    width: 35px;
+    height: 35px;
+}
+
+.punto.naranja {
+    background-color: rgba(255, 102, 0, 0.8);
+    top: -15px;
+    left: 10px;
+    width: 35px;
+    height: 35px;
+}
+
+.punto.blanco {
+    background-color: rgba(255, 255, 255, 0.8);
+    top: -3px;
+    left: 3px;
+    width: 30px;
+    height: 30px;
+}
+
+.punto.azul {
+    background-color: rgba(0, 0, 255, 0.8);
+    top: 5px;
+    left: 30px;
+}
+
+.punto.verde {
+    background-color: rgba(160, 255, 116, 0.8);
+    top: 15px;
+    left: -5px;
+}
+
+.Particulass {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.Particulas {
+    position: absolute;
+    width: 3px; /* Más pequeño */
+    height: 3px; /* Más pequeño */
+    border-radius: 50%;
+}
+
+.Particulas:nth-child(1) {
+    top: -15px;
+    left: 25px;
+    background-color: rgba(167, 255, 150, 0.7);
+}
+
+.Particulas:nth-child(2) {
+    top: 5px;
+    left: 5px;
+    background-color: rgba(251, 255, 0, 0.7);
+}
+
+.Particulas:nth-child(3) {
+    top: 30px;
+    left: 10px;
+    background-color: rgba(0, 255, 98, 0.7);
+}
+
+.Particulas:nth-child(4) {
+    top: 10px;
+    left: -10px;
+    background-color: rgba(139, 173, 245, 0.7);
+}
+
+.Particulas:nth-child(5) {
+    top: 15px;
+    left: 40px;
+    background-color: rgba(255, 33, 200, 0.7);
+}
+
+.icon {
+    position: relative;
+    font-size: 1.8em; /* Más pequeño */
+    font-weight: bold;
+    font-family: sans-serif;
+    color: white;
+    z-index: 1;
+    margin-right: -50px;
+    left: -75px;
+    top: -7px;
+}
+
+.text {
+    text-align: left;
+}
+
+.text h1 {
+    font-size: 1.2em; /* Más pequeño */
+    margin: 0;
+}
+
+.text p {
+    font-size: 0.9em; /* Más pequeño */
+    margin: 5px 0 0;
+    opacity: 0.8;
+}
