@@ -1,0 +1,436 @@
+/* Variables de color */
+:root {
+    --bg-color: #180a2f;
+    --text-color: #ccd6f6;
+    --text-secondary: #8892b0;
+    --highlight-color: #64ffda;
+    --sidebar-width: 350px;
+    --font-main: 'Inter', sans-serif;
+}
+
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo con desenfoque en el body */
+body {
+    font-family: var(--font-main);
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow: hidden; /* Evita el scroll del body */
+    position: relative; /* Necesario para el filtro de desenfoque */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    filter: blur(10px); /* Desenfoque solo en el fondo */
+    z-index: -1; /* Mantenerlo detrás del contenido */
+}
+
+
+
+/* Contenedor para el efecto de luz */
+.glow {
+    position: absolute;
+    width: 25px; /* Tamaño pequeño de la luz */
+    height: 25px; /* Tamaño pequeño de la luz */
+    background: rgba(225, 255, 248, 0.4); /* Color suave para la luz */
+    pointer-events: none; /* Evita que interfiera con la interacción del usuario */
+    border-radius: 50%; /* Hacerlo circular */
+    transform: translate(-50%, -50%); /* Centrar el efecto en el cursor */
+    box-shadow: 0 0 25px 10px rgba(233, 255, 250, 0.6); /* Sombra difusa */
+    opacity: 0; /* Iniciar invisible */
+    animation: glowAnimation 1.5s ease-out infinite; /* Efecto de animación suave */
+    z-index: 0; /* Asegura que la luz esté por debajo del contenido */
+}
+
+/* Animación para darle un efecto de resplandor suave */
+@keyframes glowAnimation {
+    0% {
+        opacity: 0.4;
+        transform: scale(1) translate(-50%, -50%);
+    }
+    50% {
+        opacity: 0.2;
+        transform: scale(1.2) translate(-50%, -50%);
+    }
+    100% {
+        opacity: 0.4;
+        transform: scale(1) translate(-50%, -50%);
+    }
+}
+
+/* Hacer que la luz se vea como si fuera parte del body */
+body {
+    position: relative; /* Esto es necesario para contener la luz */
+}
+
+/* Cuando el .glow está fuera del main, pasa por debajo del menú lateral */
+.glow.hidden {
+    display: none; /* Esconder el glow cuando esté sobre el menú lateral */
+}
+
+/* Estilo para el main */
+main {
+    position: relative; /* Esto es necesario para limitar el área donde aparece la luz */
+    z-index: 1; /* Mantiene el contenido principal por encima del glow */
+}
+
+/* Estilo para barra de redes sociales */
+#barra-redes {
+    width: var(--sidebar-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacio entre iconos */
+    background: linear-gradient(135deg, rgb(42, 14, 66) 40%, rgba(23, 10, 47, 0.9) 100%);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    padding: 10px 60px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 20px auto; /* Centrado horizontal */
+    width: 200%; /* O un valor específico como 800px */
+    max-width: 800px; /* Define el máximo ancho */
+}
+
+#barra-redes a {
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+#barra-redes a:hover {
+    transform: scale(1.1);
+    background: #ddf8f8c4; /* Cambia el color de fondo al pasar el mouse */
+
+}
+
+#barra-redes img {
+    width: 30px;
+    height: 30px;
+}
+
+/*===============================================00*/
+
+.sidebar {
+    position: relative;
+    z-index: 2; /* Asegura que el menú lateral esté por encima del glow */
+}
+
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar (fijo en la izquierda) */
+.sidebar {
+    width: var(--sidebar-width);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(135deg, rgb(30, 10, 47) 40%, rgba(26, 10, 47, 0.9) 100%);
+    position: fixed; /* Fija el sidebar */
+    left: 0;
+    top: 0;
+    bottom: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el contenido y otras secciones */
+.content {
+    flex: 1;
+    padding: 4rem 2rem;
+    margin-left: var(--sidebar-width); /* Ajusta el espacio del sidebar */
+    overflow-y: auto; /* Permite desplazamiento vertical */
+    max-height: 100vh;
+}
+
+.content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar (fijo en la izquierda) */
+.sidebar {
+    width: var(--sidebar-width);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(135deg, rgb(52, 31, 54) 40%, rgba(12, 27, 49, 0.9) 100%);
+    position: fixed; /* Fija el sidebar */
+    left: 0;
+    top: 0;
+    bottom: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo-section .name {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.logo-section .role {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: var(--highlight-color);
+}
+
+.logo-section .tagline {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 80%;
+    line-height: 1.4;
+}
+
+/* Navegación principal */
+.main-nav ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.main-nav ul li {
+    margin: 1rem 0;
+}
+
+.main-nav ul li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    position: relative;
+    padding: 0.2rem 0;
+    transition: color 0.3s;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: var(--highlight-color);
+}
+
+/* Enlaces a redes sociales */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    font-size: 1.3rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--highlight-color);
+}
+
+/* Sección de contenido (desplazable) */
+.content {
+    flex: 1;
+    padding: 4rem 2rem;
+    margin-left: var(--sidebar-width); /* Ajusta el espacio del sidebar */
+    overflow-y: auto; /* Permite desplazamiento vertical */
+    max-height: 100vh;
+}
+
+.content section {
+    max-width: 800px;
+    margin-bottom: 3rem;
+}
+
+.content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.content p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Estilo de las cards de proyectos */
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: rgba(56, 23, 69, 0.8);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h4 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: var(--text-secondary);
+}
+
+.tags {
+    margin-top: 1rem;
+}
+
+.tags span {
+    display: inline-block;
+    background: var(--highlight-color);
+    color: #280a2f;
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+/* Centrar logo encima del título */
+.logo-section {
+    display: flex;
+    flex-direction: column; /* Alinear verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    text-align: center; /* Alinear texto al centro */
+}
+
+.logo-image {
+    width: 90px; /* Ajusta el tamaño del logo */
+    height: auto; /* Mantener proporción */
+    margin-bottom: 1rem; /* Espacio debajo del logo */
+}
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.derechos{
+    text-align: center;
+}
+
+.highlight-tool {
+    color: var(--highlight-color); /* Texto oscuro para contraste */
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0 0.2rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.highlight-tool:hover {
+    transform: scale(1.1);
+}
+
+
+/* Estilo para icono flotante WSP */
+#custom-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+#chat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+#chat-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Contenedor de las burbujas */
+#social-icons {
+    position: absolute;
+    bottom: 70px; /* Ajusta la distancia hacia arriba */
+    right: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px; /* Espacio entre burbujas */
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Estilos para cada burbuja */
+.bubble {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.bubble img {
+    width: 30px;
+    height: 30px;
+}
+
+.bubble:hover {
+    transform: scale(1.1);
+}
+
+/* Mostrar las burbujas cuando están activas */
+#social-icons.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#social-icons.active .bubble {
+    opacity: 1;
+    transform: translateY(-10px); /* Ahora aparecen hacia arriba */
+}

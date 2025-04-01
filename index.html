@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DB Soft</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Fuente opcional (Ej: Inter, Poppins o Roboto) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <!-- Iconos de redes sociales (Font Awesome) -->
+    <script src="https://kit.fontawesome.com/tu-código-personal.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Encabezado (antes sidebar) -->
+        <header class="sidebar">
+            <div class="logo-section">
+                <img src="img/LogoDB Soft.png" alt="Logo DB Soft" class="logo-image" />
+                <h1 class="name">DB Soft</h1>
+                <h2 class="role">Personalización a tu gusto</h2>
+                <p class="tagline">
+                    Creamos experiencias digitales con el diseño y personalización que tú necesitas
+                </p>
+            </div>
+
+
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about" class="active">___Nosotros</a></li>
+                    <li><a href="#experience">___Experiencia</a></li>
+                    <li><a href="#projects">___Proyectos</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Sección de contenido -->
+        <main class="content">
+            <section id="about">
+                <h3>Nosotros</h3>
+                <p>
+                    Somos una empresa de software comprometida con la accesibilidad y la innovación,
+                    brindando soluciones tecnológicas a pequeñas y medianas empresas.
+                    Nos enfocamos en cada detalle con creatividad para hacer realidad las ideas de nuestros
+                    clientes.
+                    Con más de dos años en la industria, hemos consolidado nuestra presencia como un equipo
+                    confiable y apasionado por la tecnología.
+                </p>
+
+                <div id="barra-redes">
+                    <a href="https://wa.me/TU_NUMERO" target="_blank">
+                        <img src="IMG/Social_Iconos/whatsapp.png" alt="WhatsApp">
+                    </a>
+                    <a href="mailto:tucorreo@gmail.com">
+                        <img src="IMG/Social_Iconos/gmail.png" alt="Gmail">
+                    </a>
+                    <a href="https://www.instagram.com/TU_USUARIO" target="_blank">
+                        <img src="IMG/Social_Iconos/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.facebook.com/TU_USUARIO" target="_blank">
+                        <img src="IMG/Social_Iconos/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="https://github.com/TU_USUARIO" target="_blank">
+                        <img src="IMG/Social_Iconos/github.png" alt="GitHub">
+                    </a>
+                </div>
+                
+            </section>
+
+            <section id="experience">
+                <h3>Experiencia</h3>
+                <p>
+                    Nuestra fortaleza radica en la creatividad y el diseño,
+                    combinados con el uso de herramientas modernas como
+                    <span class="highlight-tool">JavaScript</span>,
+                    <span class="highlight-tool">Node.js</span>,
+                    <span class="highlight-tool">React</span>,
+                    <span class="highlight-tool">APIs</span>,
+                    <span class="highlight-tool">Bootstrap</span>,
+                    <span class="highlight-tool">HTML</span>,
+                    <span class="highlight-tool">CSS</span> y
+                    <span class="highlight-tool">Python</span>.
+                    Además, ofrecemos servicios de marketing en redes sociales para potenciar la presencia digital
+                    de nuestros clientes.
+                </p>
+            </section>
+
+
+            <section id="projects">
+                <h3>Proyectos</h3>
+                <div class="project-cards">
+                    <div class="card">
+                        <img src="IMG/proyectoCasas.png" alt="Proyecto 1" class="project-image">
+                        <h4>Proyecto 1</h4>
+                        <p>vista modelos de casas para empresa de construccion</p>
+                        <div class="tags">
+                            <span>CSS</span><span>JS</span><span>API</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="IMG/ERP_Proyecto.png" alt="Proyecto 2" class="project-image">
+                        <br><br>
+                        <h4>Proyecto 2</h4>
+                        <p>sistema de ventas ERP para pequeñas Pymes</p>
+                        <div class="tags">
+                            <span>JS</span> <span>CSS</span><span>Node.JS</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="IMG/" alt="Proyecto 3" class="project-image">
+                        <h4>Proyecto 3</h4>
+                        <p>Descripción breve del proyecto 3.</p>
+                        <div class="tags">
+                            <span>HTML</span> <span>Responsive</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <br><br>
+            <br>
+            <div class="derechos">
+                <p>&copy; 2025 <span>DB Soft</span>. Todos los derechos reservados.</p>
+            </div>
+
+            <div id="custom-chat">
+                <img src="IMG/LogoDB Soft.png" alt="Chat" id="chat-icon">
+                <div id="social-icons">
+                    <a href="https://wa.me/TU_NUMERO" target="_blank" class="bubble">
+                        <img src="IMG/Social_Iconos/whatsapp.png" alt="WhatsApp">
+                    </a>
+                    <a href="mailto:tucorreo@gmail.com" class="bubble">
+                        <img src="IMG/Social_Iconos/gmail.png" alt="Gmail">
+                    </a>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+    <div class="glow"></div>
+</body>
+<script src="script.js"></script>
+<script>
+    document.addEventListener("mousemove", (e) => {
+    let glow = document.querySelector(".glow");
+    let main = document.querySelector("main");
+    let sidebar = document.querySelector(".sidebar");
+
+    // Si no existe el contenedor .glow, lo crea
+    if (!glow) {
+        glow = document.createElement("div");
+        glow.classList.add("glow");
+        document.body.appendChild(glow); // Coloca la luz dentro del body
+    }
+
+    // Calcula el límite de las coordenadas para mantener la luz dentro del main
+    let mainRect = main.getBoundingClientRect();
+    let sidebarRect = sidebar.getBoundingClientRect();
+    let glowSize = glow.offsetWidth / 2;
+
+    // Limitar las coordenadas de la luz dentro del contenedor
+    let x = e.pageX - glowSize;
+    let y = e.pageY - glowSize;
+
+    // Asegúrate de que la luz no se salga de los límites del main
+    x = Math.max(mainRect.left, Math.min(x, mainRect.right - glow.offsetWidth));
+    y = Math.max(mainRect.top, Math.min(y, mainRect.bottom - glow.offsetHeight));
+
+    // Detectar si el cursor está sobre el menú lateral (sidebar)
+    if (e.pageX < sidebarRect.right) {
+        glow.classList.add("hidden"); // Esconde el glow cuando está sobre el menú lateral
+    } else {
+        glow.classList.remove("hidden"); // Muestra el glow cuando está fuera del menú lateral
+    }
+
+    // Cambia la posición del efecto .glow al lugar del cursor
+    glow.style.left = `${x}px`;
+    glow.style.top = `${y}px`;
+});
+
+</script>
+
+<script>
+    document.getElementById("chat-icon").addEventListener("click", function () {
+    let socialIcons = document.getElementById("social-icons");
+    socialIcons.classList.toggle("active");
+});
+
+
+</script>
+
+</html>
