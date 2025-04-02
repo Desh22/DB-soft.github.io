@@ -172,7 +172,8 @@ header {
 }
 
 .content.sidebar-hidden-content {
-    margin-left: 0; /* Ajuste cuando el menú está oculto */
+    justify-content: center;
+    margin-left: 20%; /* Ajuste cuando el menú está oculto */
 }
 
 /* Mover el botón al lado derecho y arriba */
@@ -195,7 +196,7 @@ header {
     left: 330px; /* Asegurar que siga visible fuera del menú */
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 28px;
     color: var(--text-color);
     cursor: pointer;
     z-index: 3;
