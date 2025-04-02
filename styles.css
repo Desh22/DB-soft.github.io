@@ -45,13 +45,13 @@ body::before {
     width: 25px; /* Tamaño pequeño de la luz */
     height: 25px; /* Tamaño pequeño de la luz */
     background: rgba(225, 255, 248, 0.4); /* Color suave para la luz */
-    pointer-events: none; /* Evita que interfiera con la interacción del usuario */
+    pointer-events: none; 
     border-radius: 50%; /* Hacerlo circular */
     transform: translate(-50%, -50%); /* Centrar el efecto en el cursor */
     box-shadow: 0 0 25px 10px rgba(233, 255, 250, 0.6); /* Sombra difusa */
     opacity: 0; /* Iniciar invisible */
     animation: glowAnimation 1.5s ease-out infinite; /* Efecto de animación suave */
-    z-index: 0; /* Asegura que la luz esté por debajo del contenido */
+    z-index: 0;
 }
 
 /* Animación para darle un efecto de resplandor suave */
@@ -129,6 +129,34 @@ main {
 }
 
 /*===============================================00*/
+
+#experience {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.experience-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacio entre imágenes */
+    margin-top: 20px;
+}
+
+.experience-images img {
+    width: 45%; /* Ajusta el tamaño de las imágenes */
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-images img:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
 
 .sidebar {
     position: relative;
@@ -433,4 +461,35 @@ main {
 #social-icons.active .bubble {
     opacity: 1;
     transform: translateY(-10px); /* Ahora aparecen hacia arriba */
+}
+
+
+/* responsive */
+
+@media (max-width: 1024px) {
+    .content {
+        margin-left: 0 !important;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        left: -100%;
+        transition: left 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 2rem 1rem;
+        width: 100%;
+    }
 }
