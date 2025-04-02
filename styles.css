@@ -4,7 +4,6 @@
     --text-color: #ccd6f6;
     --text-secondary: #8892b0;
     --highlight-color: #64ffda;
-    --sidebar-width: 350px;
     --font-main: 'Inter', sans-serif;
 }
 
@@ -131,7 +130,7 @@ main {
 /*===============================================00*/
 
 #experience {
-    text-align: center;
+    text-align: justify;
     padding: 40px 20px;
 }
 
@@ -163,6 +162,67 @@ main {
     z-index: 2; /* Asegura que el menú lateral esté por encima del glow */
 }
 
+/* Estilo para el header y botón de menú */
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.content.sidebar-hidden-content {
+    margin-left: 0; /* Ajuste cuando el menú está oculto */
+}
+
+/* Mover el botón al lado derecho y arriba */
+.hamburger {
+    position: absolute;
+    top: 15px;
+    left: 330px; /* Asegurar que siga visible fuera del menú */
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: 3;
+    transition: left 0.5s ease-in-out; /* Animación para moverse con el menú */
+}
+
+.hamburger {
+    position: absolute;
+    top: 15px;
+    left: 330px; /* Asegurar que siga visible fuera del menú */
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: 3;
+    transition: left 0.5s ease-in-out; /* Animación para moverse con el menú */
+}
+
+
+
+.sidebar-hidden + .hamburger {
+    left: 10px; /* Mover el botón cuando el menú se oculta */
+}
+
+.logo-section {
+    text-align: center;
+    margin-top: 30px; /* Para que no se solape con el botón */
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+    .hamburger {
+        top: 15px;
+        right: 15px;
+        font-size: 28px;
+    }
+}
+
+
 
 /* Contenedor principal */
 .container {
@@ -170,24 +230,10 @@ main {
     min-height: 100vh;
 }
 
-/* Sidebar (fijo en la izquierda) */
-.sidebar {
-    width: var(--sidebar-width);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: linear-gradient(135deg, rgb(30, 10, 47) 40%, rgba(26, 10, 47, 0.9) 100%);
-    position: fixed; /* Fija el sidebar */
-    left: 0;
-    top: 0;
-    bottom: 0;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-}
 
 /* Estilo para el contenido y otras secciones */
 .content {
-    flex: 1;
+    flex: 3;
     padding: 4rem 2rem;
     margin-left: 450px; /* Ajusta el espacio del sidebar */
     overflow-y: auto; /* Permite desplazamiento vertical */
@@ -202,26 +248,31 @@ main {
 
 
 
-/* Contenedor principal */
-.container {
-    display: flex;
-    min-height: 100vh;
-}
-
 /* Sidebar (fijo en la izquierda) */
 .sidebar {
-    width: var(--sidebar-width);
+    width: 320px;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background: linear-gradient(135deg, rgb(52, 31, 54) 40%, rgba(12, 27, 49, 0.9) 100%);
-    position: fixed; /* Fija el sidebar */
+    position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease-in-out; /* Animación suave */
 }
+
+.sidebar-hidden {
+    transform: translateX(-100%); /* Ocultar el menú moviéndolo fuera de la pantalla */
+}
+
+.content {
+    margin-left: 350px; /* Ajuste con el menú visible */
+    transition: margin-left 0.5s ease-in-out; /* Animación suave */
+}
+
 
 .logo-section .name {
     font-size: 2.5rem;
@@ -284,25 +335,12 @@ main {
     color: var(--highlight-color);
 }
 
-/* Sección de contenido (desplazable) */
-.content {
-    flex: 1;
-    padding: 4rem 2rem;
-    margin-left: 450px; /* Ajusta el espacio del sidebar */
-    overflow-y: auto; /* Permite desplazamiento vertical */
-    max-height: 100vh;
-}
 
 .content section {
     max-width: 800px;
     margin-bottom: 3rem;
 }
 
-.content h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #fff;
-}
 
 .content p {
     color: var(--text-secondary);
