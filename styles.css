@@ -9,9 +9,9 @@
 
 /* Reseteo básico */
 * {
-    margin: 0;
+    margin: 11;
     padding: 0;
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
 }
 
 /* Fondo con desenfoque en el body */
@@ -179,56 +179,33 @@ header {
 /* Mover el botón al lado derecho y arriba */
 .hamburger {
     position: absolute;
-    top: 15px;
-    left: 330px; /* Asegurar que siga visible fuera del menú */
+    top: 25px;
+    left: 340px;
     background: none;
     border: none;
     font-size: 24px;
     color: var(--text-color);
     cursor: pointer;
     z-index: 3;
-    transition: left 0.5s ease-in-out; /* Animación para moverse con el menú */
+    transition: left 0.5s ease-in-out; /* Animación */
 }
 
-.hamburger {
-    position: absolute;
-    top: 15px;
-    left: 330px; /* Asegurar que siga visible fuera del menú */
-    background: none;
-    border: none;
-    font-size: 28px;
-    color: var(--text-color);
-    cursor: pointer;
-    z-index: 3;
-    transition: left 0.5s ease-in-out; /* Animación para moverse con el menú */
+/* Cuando el menú esté cerrado, mueve el botón */
+.sidebar.closed .hamburger {
+    left: 440px;
 }
 
 
-
-.sidebar-hidden + .hamburger {
-    left: 10px; /* Mover el botón cuando el menú se oculta */
-}
 
 .logo-section {
     text-align: center;
     margin-top: 30px; /* Para que no se solape con el botón */
 }
 
-/* Ajustes responsive */
-@media (max-width: 768px) {
-    .hamburger {
-        top: 15px;
-        right: 15px;
-        font-size: 28px;
-    }
-}
-
-
-
 /* Contenedor principal */
 .container {
-    display: inline;
     min-height: 100vh;
+    display: flex;
 }
 
 
@@ -502,58 +479,19 @@ header {
 }
 
 
-/* Estilos responsive */
-@media (max-width: 768px) {
-    /* Ocultar el header en pantallas móviles */
-    header {
-        display: none;
-    }
-
-    /* Ajustar el sidebar en pantallas pequeñas */
-    .sidebar {
-        width: 250px; /* Reducir el tamaño del sidebar */
-        padding: 1rem; /* Reducir el padding */
-    }
-
-    /* Ajustar el contenido */
-    .content {
-        margin-left: 0; /* Eliminar margen izquierdo para que el contenido ocupe toda la pantalla */
-        padding: 2rem 1rem; /* Reducir el padding */
-    }
-
-    /* Barra de redes sociales */
-    #barra-redes {
-        width: 100%;
-        max-width: 400px;
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    /* Ajustar el tamaño de los iconos */
-    #barra-redes a {
-        width: 40px;
-        height: 40px;
-    }
-
-    /* Ajustar las imágenes de la experiencia */
-    .experience-images img {
-        width: 80%; /* Reducir tamaño de las imágenes */
-        max-width: 300px;
-    }
-
-    /* Ajustar las cards de proyectos */
-    .project-cards {
-        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
-    }
-
-    /* Ajustar el tamaño de las cards */
-    .card {
-        padding: 1rem;
-    }
-
-    /* Sidebar en pantallas móviles */
-    .sidebar {
-        width: 100%; /* El sidebar ocupa toda la pantalla */
-        position: relative; /* Cambiar a posición relativa */
-    }
+/* Para navegadores basados en Webkit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    display: none;
 }
+
+/* Para Firefox */
+html {
+    scrollbar-width: none;
+}
+
+/* Para Internet Explorer y Edge */
+body {
+    -ms-overflow-style: none;
+}
+
+/* Estilos responsive */
