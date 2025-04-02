@@ -16,6 +16,7 @@
     <div class="container">
         <!-- Encabezado (antes sidebar) -->
         <header class="sidebar">
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
             <div class="logo-section">
                 <img src="IMG/LogoDB Soft.png" alt="Logo DB Soft" class="logo-image" />
                 <h1 class="name">DB Soft</h1>
@@ -24,9 +25,6 @@
                     Creamos experiencias digitales con el diseño y personalización que tú necesitas
                 </p>
             </div>
-
-
-
             <nav class="main-nav">
                 <ul>
                     <li><a href="#about" class="active">___Nosotros</a></li>
@@ -194,6 +192,21 @@
     socialIcons.classList.toggle("active");
 });
 
+
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const sidebar = document.querySelector(".sidebar");
+    const content = document.querySelector(".content");
+    const button = document.querySelector(".hamburger");
+
+    button.addEventListener("click", function() {
+        sidebar.classList.toggle("sidebar-hidden");
+        content.classList.toggle("sidebar-hidden-content");
+        button.classList.toggle("sidebar-hidden");
+    });
+});
 
 </script>
 
