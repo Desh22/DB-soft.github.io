@@ -464,34 +464,58 @@ main {
 }
 
 
-/* responsive */
-
-@media (max-width: 1024px) {
-    .content {
-        margin-left: 0 !important;
-        width: 100%;
-    }
-}
-
+/* Estilos responsive */
 @media (max-width: 768px) {
+    /* Ocultar el header en pantallas móviles */
+    header {
+        display: none;
+    }
+
+    /* Ajustar el sidebar en pantallas pequeñas */
     .sidebar {
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        left: -100%;
-        transition: left 0.3s ease-in-out;
-        z-index: 1000;
+        width: 250px; /* Reducir el tamaño del sidebar */
+        padding: 1rem; /* Reducir el padding */
     }
 
-    .sidebar.active {
-        left: 0;
-    }
-
+    /* Ajustar el contenido */
     .content {
-        margin-left: 0;
-        padding: 2rem 1rem;
+        margin-left: 0; /* Eliminar margen izquierdo para que el contenido ocupe toda la pantalla */
+        padding: 2rem 1rem; /* Reducir el padding */
+    }
+
+    /* Barra de redes sociales */
+    #barra-redes {
         width: 100%;
+        max-width: 400px;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* Ajustar el tamaño de los iconos */
+    #barra-redes a {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Ajustar las imágenes de la experiencia */
+    .experience-images img {
+        width: 80%; /* Reducir tamaño de las imágenes */
+        max-width: 300px;
+    }
+
+    /* Ajustar las cards de proyectos */
+    .project-cards {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+    }
+
+    /* Ajustar el tamaño de las cards */
+    .card {
+        padding: 1rem;
+    }
+
+    /* Sidebar en pantallas móviles */
+    .sidebar {
+        width: 100%; /* El sidebar ocupa toda la pantalla */
+        position: relative; /* Cambiar a posición relativa */
     }
 }
-
-/* Estilos previos... */
