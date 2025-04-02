@@ -227,14 +227,13 @@ header {
 
 /* Contenedor principal */
 .container {
-    display: flex;
+    display: inline;
     min-height: 100vh;
 }
 
 
 /* Estilo para el contenido y otras secciones */
 .content {
-    flex: 3;
     padding: 4rem 2rem;
     margin-left: 450px; /* Ajusta el espacio del sidebar */
     overflow-y: auto; /* Permite desplazamiento vertical */
