@@ -40,7 +40,7 @@ body::before {
 
 /* Contenedor para el efecto de luz */
 .glow {
-    position: absolute;
+    position: absolute; /* Posición absoluta para seguir el cursor */
     width: 25px; /* Tamaño pequeño de la luz */
     height: 25px; /* Tamaño pequeño de la luz */
     background: rgba(225, 255, 248, 0.4); /* Color suave para la luz */
@@ -211,11 +211,13 @@ header {
 
 /* Estilo para el contenido y otras secciones */
 .content {
-    padding: 4rem 2rem;
+    padding: 2rem 5rem;
     margin-left: 450px; /* Ajusta el espacio del sidebar */
     overflow-y: auto; /* Permite desplazamiento vertical */
+    overflow-x: hidden; /* Evita desplazamiento horizontal */
     max-height: 100vh;
 }
+
 
 .content h3 {
     font-size: 1.8rem;
@@ -246,7 +248,7 @@ header {
 }
 
 .content {
-    margin-left: 350px; /* Ajuste con el menú visible */
+    margin-left: 340px; /* Ajuste con el menú visible */
     transition: margin-left 0.5s ease-in-out; /* Animación suave */
 }
 
@@ -495,3 +497,45 @@ body {
 }
 
 /* Estilos responsive */
+/* Estilos responsive */
+
+/* Ocultar el header en vista móvil */
+@media screen and (max-width: 768px) {
+    header {
+        display: none;
+    }
+    
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        min-height: 100vh; /* Asegura que el contenido se vea completo */
+        padding: 20px; /* Espaciado para evitar que el contenido quede pegado */
+    }
+}
+
+/* Ajustes para tabletas */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .contenedor {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
+        padding: 20px;
+    }
+}
+
+/* Ajustes para PC */
+@media screen and (min-width: 1025px) {
+    .contenedor {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
