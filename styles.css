@@ -506,3 +506,11 @@ body {
         margin: 0 auto;
     }
 }
+
+/*ajuste para Lunux*/
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .contenedor {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
