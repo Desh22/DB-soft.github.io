@@ -37,47 +37,14 @@ body::before {
 }
 
 
-
-/* Contenedor para el efecto de luz */
-.glow {
-    position: absolute; /* Posición absoluta para seguir el cursor */
-    width: 25px; /* Tamaño pequeño de la luz */
-    height: 25px; /* Tamaño pequeño de la luz */
-    background: rgba(225, 255, 248, 0.4); /* Color suave para la luz */
-    pointer-events: none; /* Evita que interfiera con la interacción del usuario */
-    border-radius: 50%; /* Hacerlo circular */
-    transform: translate(-50%, -50%); /* Centrar el efecto en el cursor */
-    box-shadow: 0 0 25px 10px rgba(233, 255, 250, 0.6); /* Sombra difusa */
-    opacity: 0; /* Iniciar invisible */
-    animation: glowAnimation 1.5s ease-out infinite; /* Efecto de animación suave */
-    z-index: 0; /* Asegura que la luz esté por debajo del contenido */
-}
-
-/* Animación para darle un efecto de resplandor suave */
-@keyframes glowAnimation {
-    0% {
-        opacity: 0.4;
-        transform: scale(1) translate(-50%, -50%);
-    }
-    50% {
-        opacity: 0.2;
-        transform: scale(1.2) translate(-50%, -50%);
-    }
-    100% {
-        opacity: 0.4;
-        transform: scale(1) translate(-50%, -50%);
-    }
-}
+/* Animación para darle un efecto de resplandor suave *
 
 /* Hacer que la luz se vea como si fuera parte del body */
 body {
     position: relative; /* Esto es necesario para contener la luz */
 }
 
-/* Cuando el .glow está fuera del main, pasa por debajo del menú lateral */
-.glow.hidden {
-    display: none; /* Esconder el glow cuando esté sobre el menú lateral */
-}
+
 
 /* Estilo para el main */
 main {
