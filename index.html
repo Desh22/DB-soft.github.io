@@ -146,48 +146,10 @@
             
         </main>
     </div>
-    <div class="glow"></div>
+    
 </body>
 <script src="script.js"></script>
-<script>
-    document.addEventListener("mousemove", (e) => {
-    let glow = document.querySelector(".glow");
-    let main = document.querySelector("main");
-    let sidebar = document.querySelector(".sidebar");
 
-    // Si no existe el contenedor .glow, lo crea
-    if (!glow) {
-        glow = document.createElement("div");
-        glow.classList.add("glow");
-        document.body.appendChild(glow); // Coloca la luz dentro del body
-    }
-
-    // Calcula el límite de las coordenadas para mantener la luz dentro del main
-    let mainRect = main.getBoundingClientRect();
-    let sidebarRect = sidebar.getBoundingClientRect();
-    let glowSize = glow.offsetWidth / 2;
-
-    // Limitar las coordenadas de la luz dentro del contenedor
-    let x = e.pageX - glowSize;
-    let y = e.pageY - glowSize;
-
-    // Asegúrate de que la luz no se salga de los límites del main
-    x = Math.max(mainRect.left, Math.min(x, mainRect.right - glow.offsetWidth));
-    y = Math.max(mainRect.top, Math.min(y, mainRect.bottom - glow.offsetHeight));
-
-    // Detectar si el cursor está sobre el menú lateral (sidebar)
-    if (e.pageX < sidebarRect.right) {
-        glow.classList.add("hidden"); // Esconde el glow cuando está sobre el menú lateral
-    } else {
-        glow.classList.remove("hidden"); // Muestra el glow cuando está fuera del menú lateral
-    }
-
-    // Cambia la posición del efecto .glow al lugar del cursor
-    glow.style.left = `${x}px`;
-    glow.style.top = `${y}px`;
-});
-
-</script>
 
 <script>
     document.getElementById("chat-icon").addEventListener("click", function () {
